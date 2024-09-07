@@ -58,6 +58,16 @@
             font-size: 16px;
             transition: background-color 0.3s;
         }
+        .go-home {
+            background-color: #009879;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
         .redirect-button:hover {
             background-color: #007e63;
         }
@@ -105,7 +115,7 @@
             }
         }
         function redirectToHome() {
-        	const baseUrl = window.location.origin + window.location.pathname.split('/').slice(0, -1).join('/');
+            const baseUrl = window.location.origin + "/";
             window.location.href = baseUrl;
         }
     </script>
@@ -117,7 +127,7 @@
 <div class="button-container">
     <input type="text" id="id" class="input-id" placeholder="Enter PNR No.">
     <button class="redirect-button" onclick="redirectToDetails()">Cancel Ticket</button>
-    <br><button class="redirect-button" onclick="redirectToHome()">Go Back</button>
+    <button class="go-home" onclick="redirectToHome()">Go Back</button>
 </div>
 </body>
 </html>

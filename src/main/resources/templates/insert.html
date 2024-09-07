@@ -58,6 +58,16 @@
                 font-size: 16px;
                 transition: background-color 0.3s;
             }
+            .go-home {
+            background-color: #009879;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
             .redirect-button:hover {
                 background-color: #007e63;
             }
@@ -93,6 +103,12 @@
                 to { background-color: #d3d3d3; }
             }
         </style>
+        <script>
+        function redirectToHome() {
+            const baseUrl = window.location.origin + "/";
+            window.location.href = baseUrl;
+        }
+        </script>
     </head>
     <body>
         <h1 align="center">Book Ticket</h1>
@@ -105,5 +121,6 @@
             <br><input type="text" name="coach" class="input-id" required placeholder="Enter Coach Name">
             <br><button class="redirect-button" type="submit" value="submit">Submit</button>
         </form>
+        <button class="go-home" onclick="redirectToHome()">Go Back</button>
     </body>
 </html>

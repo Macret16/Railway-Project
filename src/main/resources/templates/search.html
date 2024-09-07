@@ -58,6 +58,16 @@
             font-size: 16px;
             transition: background-color 0.3s;
         }
+        .go-home {
+            background-color: #009879;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
         .redirect-button:hover {
             background-color: #007e63;
         }
@@ -104,34 +114,38 @@
                 alert('Please enter a valid search query.');
             }
         }
+        function redirectToHome() {
+            const baseUrl = window.location.origin + "/";
+            window.location.href = baseUrl;
+        }
     </script>
 </head>
 <body>
-
-<h1>Check PNR Status</h1>
-
-<div class="button-container">
-    <input type="text" id="id" class="input-id" placeholder="Enter Search Term">
-    <button class="redirect-button" onclick="redirectToDetails()">Search</button>
-</div>
-
-<table>
-    <thead>
-    <tr>
-        <th>PNR</th>
-        <th>Passenger Name</th>
-        <th>Passenger Age</th>
-        <th>Date</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="data : ${data}">
-        <td th:text="${data.pnr}">PNR</td>
-        <td th:text="${data.pass_name}">Passenger Name</td>
-        <td th:text="${data.pass_age}">Passenger Age</td>
-        <td th:text="${data.date}">Date</td>
-    </tr>
-    </tbody>
-</table>
+	<h1>Check PNR Status</h1>
+	
+	<div class="button-container">
+	    <input type="text" id="id" class="input-id" placeholder="Enter Search Term">
+	    <button class="redirect-button" onclick="redirectToDetails()">Search</button>
+	</div>
+	
+	<table>
+	    <thead>
+	    <tr>
+	        <th>PNR</th>
+	        <th>Passenger Name</th>
+	        <th>Passenger Age</th>
+	        <th>Date</th>
+	    </tr>
+	    </thead>
+	    <tbody>
+	    <tr th:each="data : ${data}">
+	        <td th:text="${data.pnr}">PNR</td>
+	        <td th:text="${data.pass_name}">Passenger Name</td>
+	        <td th:text="${data.pass_age}">Passenger Age</td>
+	        <td th:text="${data.date}">Date</td>
+	    </tr>
+	    </tbody>
+	</table>
+	<button class="go-home" onclick="redirectToHome()">Go Back</button>
 </body>
 </html>
