@@ -1,4 +1,5 @@
-FROM eclipse-temurin:21-jdk-alpine
-VOLUME /railway
-COPY target/*.jar railway.jar
-ENTRYPOINT ["java","-jar","/railway.jar"]
+FROM eclipse-temurin:22-jdk-alpine
+VOLUME /tmp
+COPY target/*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
+EXPOSE 8080
