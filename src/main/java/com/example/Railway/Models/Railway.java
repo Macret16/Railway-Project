@@ -12,14 +12,109 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.util.Random;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name="Railway")
 public class Railway {
 
-    @JsonIgnore
+    public Random getRandom() {
+		return random;
+	}
+
+	public void setRandom(Random random) {
+		this.random = random;
+	}
+
+	public long getPnr() {
+		return pnr;
+	}
+
+	public void setPnr(long pnr) {
+		this.pnr = pnr;
+	}
+
+	public String getPass_name() {
+		return pass_name;
+	}
+
+	public void setPass_name(String pass_name) {
+		this.pass_name = pass_name;
+	}
+
+	public int getPass_age() {
+		return pass_age;
+	}
+
+	public void setPass_age(int pass_age) {
+		this.pass_age = pass_age;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+	public String getDeparture() {
+		return departure;
+	}
+
+	public void setDeparture(String departure) {
+		this.departure = departure;
+	}
+
+	public int getTime() {
+		return time;
+	}
+
+	public void setTime(int time) {
+		this.time = time;
+	}
+
+	public String getDestination() {
+		return destination;
+	}
+
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
+
+	public int getTrain_number() {
+		return train_number;
+	}
+
+	public void setTrain_number(int train_number) {
+		this.train_number = train_number;
+	}
+
+	public String getTrain_name() {
+		return train_name;
+	}
+
+	public void setTrain_name(String train_name) {
+		this.train_name = train_name;
+	}
+
+	public String getCoach() {
+		return coach;
+	}
+
+	public void setCoach(String coach) {
+		this.coach = coach;
+	}
+
+	public long getAmount() {
+		return amount;
+	}
+
+	public void setAmount(long amount) {
+		this.amount = amount;
+	}
+
+	@JsonIgnore
     Random random = new Random();
 
     @SequenceGenerator(name="seq", initialValue=100000, allocationSize=100)
