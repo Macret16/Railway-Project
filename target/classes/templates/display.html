@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            animation: backgroundFade 5s infinite alternate;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            animation: fadeIn 2s;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 18px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            animation: tablePop 1s ease-in-out;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            transition: background-color 0.3s;
+        }
+        th {
+            background-color: #009879;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+            animation: rowHighlight 0.5s;
+        }
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .redirect-button {
+            background-color: #009879;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .redirect-button:hover {
+            background-color: #007e63;
+        }
+        .input-id {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        @media screen and (max-width: 600px) {
+            table {
+                font-size: 14px;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
+        @keyframes backgroundFade {
+            0% { background-color: #f4f4f9; }
+            100% { background-color: #e2e2e2; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes tablePop {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes rowHighlight {
+            from { background-color: #f1f1f1; }
+            to { background-color: #d3d3d3; }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Display Bookings</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>PNR</th>
+        <th>Passenger Name</th>
+        <th>Passenger Age</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="data : ${data}">
+        <td th:text="${data.pnr}">PNR</td>
+        <td th:text="${data.pass_name}">Passenger Name</td>
+        <td th:text="${data.pass_age}">Passenger Age</td>
+        <td th:text="${data.date}">Date</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

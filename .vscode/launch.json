@@ -1,0 +1,29 @@
+{
+  "configurations": [
+  
+    {
+      "type": "java",
+      "name": "RestApp1",
+      "request": "launch",
+      "mainClass": "com.example.FirstProject.RestApp1",
+      "projectName": "FirstProject"
+    },
+    {
+      "type": "java",
+      "name": "RestApp1",
+      "request": "launch",
+      "mainClass": "com.example.RestApp1.RestApp1",
+      "projectName": "FirstProject"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-FirstProjectApplication<FirstProject>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.example.FirstProject.FirstProjectApplication",
+      "projectName": "FirstProject",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
